@@ -255,8 +255,8 @@ const Toolbar: React.FC<Props> = ({ svgList, loadDataList }) => {
             {processing
               ? "Processing..."
               : webmData
-              ? "Export to WebM"
-              : "Prepare WebM"}
+                ? "Export to WebM"
+                : "Prepare WebM"}
           </button>
         </div>
       )}
