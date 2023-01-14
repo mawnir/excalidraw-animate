@@ -141,10 +141,8 @@ const animatePath = (
     animate.setAttribute("begin", `${currentMs + i * (durationMs / repeat)}ms`);
     animate.setAttribute("dur", `${durationMs / repeat}ms`);
     animate.setAttribute("fill", "freeze");
-    //---
-    //-animate.setAttribute("values", dFrom + ";" + dLast);
-    //-animate.setAttribute("keyTimes", "0;1");
-    //animate.setAttribute("repeatCount", "indefinite");
+
+    console.log('durationMs');
 
     ele.appendChild(animate);
     dLast = dFrom;

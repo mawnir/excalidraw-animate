@@ -41,6 +41,37 @@
 </head>
 
 <body>
+
+
+    <svg viewBox="0 0 100 50">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                orient="auto-start-reverse">
+                <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="black" stroke-width="1" maske="url(#mask_arrow)" />
+                <rect width="10" height="10" fill="white" x="0">
+                    <animate attributeName="x" values="0;10" dur="300ms" begin="primary.end - 300ms" repeatCount="none"
+                        fill="freeze" />
+                </rect>
+            </marker>
+            <mask id="mask_arrow">
+                <path d="M 5 5 Q 65 40 80 10" stroke="none" stroke-width="1" fill="none" marker-end="url(#arrow)" />
+            </mask>
+            <mask id="mask_dash">
+                <path d="M 5 5 Q 65 40 80 10" stroke="white" stroke-width="2" stroke-dasharray="5" fill="none"
+                    stroke-dashoffset="0" pathLength="100">
+                    <animate attributeName="stroke-dashoffset" values="0;-100" dur="5s" begin="primary.begin"
+                        repeatCount="indefinite" />
+                </path>
+            </mask>
+        </defs>
+        <path d="M 5 5 Q 65 40 80 10" stroke="black" stroke-width="1" stroke-dasharray="100" stroke-dashoffset="100"
+            pathLength="100" fill="none" mask="url(#mask_dash)">
+            <animate id="primary" attributeName="stroke-dashoffset" values="100;0" dur="5s" repeatCount="none"
+                fill="freeze" />
+        </path>
+        <path d="M 5 45 Q 65 40 80 10" stroke="none" stroke-width="1" fill="none" marker-end="url(#arrow)" />
+    </svg>
+
     <div class="bg">
         <svg width="200" class="test" height="200" viewBox="0 0 200 200">
             <polygon class="path" points="0 0, 100 0, 100 40, 200 40, 200 200, 100 200, 100 150, 0 150, 0 0"
