@@ -260,12 +260,13 @@ const Toolbar: React.FC<Props> = ({ svgList, loadDataList }) => {
           </button>
         </div>
       )}
+
       <GitHubCorner
         link="https://github.com/dai-shi/excalidraw-animate"
-        size={40}
+        size={30}
       />
     </div>
   );
-};
+};         //- GitHubCorner
 
 export default Toolbar;
