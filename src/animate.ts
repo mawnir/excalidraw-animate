@@ -142,9 +142,18 @@ const animatePath = (
     animate.setAttribute("dur", `${durationMs / repeat}ms`);
     animate.setAttribute("fill", "freeze");
 
-    console.log('durationMs');
+    //-
+    const kanimate = svg.ownerDocument.createElementNS(SVG_NS, "animate");
+    kanimate.setAttribute("attributeName", "stroke-dashoffset");
+    kanimate.setAttribute("values", "300;0");
+    kanimate.setAttribute("dur", "5s");
+    kanimate.setAttribute("repeatCount", "indefinite");
+    kanimate.setAttribute("fill", "freeze");
+    //-
+    //-console.log('durationMs');
 
     ele.appendChild(animate);
+    ele.appendChild(kanimate);
     dLast = dFrom;
   }
   animatePointer(svg, ele, dTo, currentMs, durationMs, options);
